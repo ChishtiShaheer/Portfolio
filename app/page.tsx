@@ -276,7 +276,7 @@ export default function Portfolio() {
               <Card className="hover:shadow-lg transition-shadow">
                 <CardHeader className="flex flex-col">
                   <Image
-                    src="/candyimg.jpg"
+                    src="/ccimg.jpg"
                     alt="CANDY CRUSH"
                     width={400}
                     height={200}
