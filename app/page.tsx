@@ -1,3 +1,5 @@
+"use client"
+import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -5,7 +7,14 @@ import { Github, Linkedin, Mail, ExternalLink, Code, Smartphone, Database, Globe
 import Image from "next/image"
 import { ThemeToggle } from "@/components/theme-toggle"
 
+
 export default function Portfolio() {
+  const [currentYear, setCurrentYear] = useState<number | null>(null)
+
+  useEffect(() => {
+    setCurrentYear(new Date().getFullYear())
+  }, [])
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800">
       {/* Navigation */}
@@ -14,36 +23,52 @@ export default function Portfolio() {
           <div className="flex justify-between items-center">
             <h1 className="text-xl font-bold text-slate-800 dark:text-slate-100">Shaheer Chishti</h1>
             <div className="hidden md:flex space-x-6 items-center">
-              <a
-                href="#about"
+
+              <button
+                onClick={() =>
+                  document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })
+                }
                 className="text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-slate-100 transition-colors"
               >
                 About
-              </a>
-              <a
-                href="#skills"
+              </button>
+
+              <button
+                onClick={() =>
+                  document.getElementById("skills")?.scrollIntoView({ behavior: "smooth" })
+                }
                 className="text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-slate-100 transition-colors"
               >
                 Skills
-              </a>
-              <a
-                href="#projects"
+              </button>
+
+              <button
+                onClick={() =>
+                  document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })
+                }
                 className="text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-slate-100 transition-colors"
               >
                 Projects
-              </a>
-              <a
-                href="#education"
+              </button>
+
+              <button
+                onClick={() =>
+                  document.getElementById("education")?.scrollIntoView({ behavior: "smooth" })
+                }
                 className="text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-slate-100 transition-colors"
               >
                 Education
-              </a>
-              <a
-                href="#contact"
+              </button>
+
+              <button
+                onClick={() =>
+                  document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
+                }
                 className="text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-slate-100 transition-colors"
               >
                 Contact
-              </a>
+              </button>
+
               <ThemeToggle />
             </div>
             {/* Mobile Navigation */}
@@ -75,11 +100,11 @@ export default function Portfolio() {
 
             <h1 className="text-4xl md:text-6xl font-bold text-slate-800 dark:text-slate-100 mb-4">Shaheer Chishti</h1>
             <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 mb-6">
-              Computer Science Sophomore & App Developer
+              Computer Science Junior & App Developer
             </p>
             <p className="text-lg text-slate-500 dark:text-slate-400 max-w-2xl mx-auto mb-8">
               Passionate about creating innovative mobile and web applications that solve real-world problems. Currently
-              exploring the latest technologies in app development and software engineering.
+              exploring the latest technologies in app development and Game Development. Always eager to learn and collaborate on exciting projects!
             </p>
             <div className="flex justify-center space-x-4">
               <Button asChild
@@ -103,13 +128,13 @@ export default function Portfolio() {
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
                 <p className="text-lg text-slate-600 dark:text-slate-300 mb-6">
-                  I'm a dedicated Computer Science sophomore with a passion for development. My journey in
+                  I'm a dedicated Computer Science Junior with a passion for development. My journey in
                   programming started with curiosity about how mobile apps work, and it has evolved into a deep interest
                   in creating user-friendly applications. Moreover, I have a keen interest in exploring the latest
-                  technologies and frameworks in the software development landscape and cybersecurity.
+                  technologies and frameworks in Game Development and cybersecurity.
                 </p>
                 <p className="text-lg text-slate-600 dark:text-slate-300 mb-6">
-                  I enjoy working on both frontend and backend development, with a particular focus on 
+                  I enjoy working on both frontend and backend development, with a particular focus on
                   development using modern frameworks and technologies. I'm always eager to learn new technologies and
                   take on challenging projects.
                 </p>
@@ -284,7 +309,7 @@ export default function Portfolio() {
                   />
                   <CardTitle>CANDY CRUSH</CardTitle>
                   <CardDescription>
-                   A 2D candy crush game built with basic OOP and SFML.
+                    A 2D candy crush game built with basic OOP and SFML.
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
@@ -315,7 +340,7 @@ export default function Portfolio() {
                   />
                   <CardTitle>MAZE RUNNER</CardTitle>
                   <CardDescription>
-                    A 2D Game in Assembly Language where the player navigates through a maze. 
+                    A 2D Game in Assembly Language where the player navigates through a maze.
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
@@ -346,7 +371,7 @@ export default function Portfolio() {
             <Card>
               <CardHeader>
                 <CardTitle className="text-xl">Bachelor of Science in Computer Science</CardTitle>
-                <CardDescription className="text-lg">Currently Sophomore Year</CardDescription>
+                <CardDescription className="text-lg">Currently Junior Year</CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
@@ -419,7 +444,7 @@ export default function Portfolio() {
                   <h3 className="font-semibold mb-2">GitHub</h3>
                   <p className="text-slate-600">Check out my code</p>
                   <Button className="mt-4" size="sm" variant="outline" asChild>
-                    <a href="https://github.com/ChishtiShaheer?tab=projects" target="_blank" rel="noopener noreferrer">
+                    <a href="https://github.com/ChishtiShaheer" target="_blank" rel="noopener noreferrer">
                       View Projects
                     </a>
                   </Button>
@@ -434,7 +459,7 @@ export default function Portfolio() {
       <footer className="py-8 px-4 bg-slate-800 dark:bg-slate-950 text-white">
         <div className="container mx-auto text-center">
           <p className="text-slate-300 dark:text-slate-400">
-            © {new Date().getFullYear()} Shaheer Chishti. Built with Next.js and Tailwind CSS.
+            © {currentYear ?? new Date().getFullYear()} Shaheer Chishti. Built with Next.js and Tailwind CSS.
           </p>
         </div>
       </footer>
