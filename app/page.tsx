@@ -3,10 +3,9 @@ import { useState, useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Github, Linkedin, Mail, ExternalLink, Code, Smartphone, Database, Globe } from "lucide-react"
+import { Github, Linkedin, Mail, Phone, Award, Code, Smartphone, Database, Globe, ShoppingCart, LayoutDashboard, Salad, Radar } from "lucide-react"
 import Image from "next/image"
 import { ThemeToggle } from "@/components/theme-toggle"
-
 
 export default function Portfolio() {
   const [currentYear, setCurrentYear] = useState<number | null>(null)
@@ -23,52 +22,42 @@ export default function Portfolio() {
           <div className="flex justify-between items-center">
             <h1 className="text-xl font-bold text-slate-800 dark:text-slate-100">Shaheer Chishti</h1>
             <div className="hidden md:flex space-x-6 items-center">
-
               <button
-                onClick={() =>
-                  document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })
-                }
+                onClick={() => document.getElementById("about")?.scrollIntoView({ behavior: "smooth" })}
                 className="text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-slate-100 transition-colors"
               >
                 About
               </button>
-
               <button
-                onClick={() =>
-                  document.getElementById("skills")?.scrollIntoView({ behavior: "smooth" })
-                }
+                onClick={() => document.getElementById("skills")?.scrollIntoView({ behavior: "smooth" })}
                 className="text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-slate-100 transition-colors"
               >
                 Skills
               </button>
-
               <button
-                onClick={() =>
-                  document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })
-                }
+                onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
                 className="text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-slate-100 transition-colors"
               >
                 Projects
               </button>
-
               <button
-                onClick={() =>
-                  document.getElementById("education")?.scrollIntoView({ behavior: "smooth" })
-                }
+                onClick={() => document.getElementById("achievements")?.scrollIntoView({ behavior: "smooth" })}
+                className="text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-slate-100 transition-colors"
+              >
+                Achievements
+              </button>
+              <button
+                onClick={() => document.getElementById("education")?.scrollIntoView({ behavior: "smooth" })}
                 className="text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-slate-100 transition-colors"
               >
                 Education
               </button>
-
               <button
-                onClick={() =>
-                  document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
-                }
+                onClick={() => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })}
                 className="text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-slate-100 transition-colors"
               >
                 Contact
               </button>
-
               <ThemeToggle />
             </div>
             {/* Mobile Navigation */}
@@ -99,12 +88,20 @@ export default function Portfolio() {
             />
 
             <h1 className="text-4xl md:text-6xl font-bold text-slate-800 dark:text-slate-100 mb-4">Shaheer Chishti</h1>
-            <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 mb-6">
-              Computer Science Junior & App Developer
+            <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 mb-4">
+              Computer Science Undergraduate &amp; Full-Stack Developer
             </p>
+            <div className="flex justify-center mb-6">
+              <Badge variant="secondary" className="text-sm px-3 py-1">
+                <Award className="w-4 h-4 mr-1 inline" />
+                Regional Shortlist — AI Seekho 2026 Google Antigravity National Hackathon
+              </Badge>
+            </div>
             <p className="text-lg text-slate-500 dark:text-slate-400 max-w-2xl mx-auto mb-8">
-              Passionate about creating innovative mobile and web applications that solve real-world problems. Currently
-              exploring the latest technologies in app development and Game Development. Always eager to learn and collaborate on exciting projects!
+              Computer Science undergraduate at FAST NUCES Lahore with hands-on experience building full-stack
+              desktop, web, and mobile systems — from cloud-synchronized POS platforms to AI-powered agentic
+              pipelines. Seeking an international software engineering internship to contribute to high-impact
+              engineering teams.
             </p>
             <div className="flex justify-center space-x-4">
               <Button asChild
@@ -128,15 +125,15 @@ export default function Portfolio() {
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
                 <p className="text-lg text-slate-600 dark:text-slate-300 mb-6">
-                  I'm a dedicated Computer Science Junior with a passion for development. My journey in
-                  programming started with curiosity about how mobile apps work, and it has evolved into a deep interest
-                  in creating user-friendly applications. Moreover, I have a keen interest in exploring the latest
-                  technologies and frameworks in Game Development and cybersecurity.
+                  I'm a Computer Science undergraduate at FAST NUCES Lahore with a proven ability to architect
+                  modular, production-ready systems — from cloud-synchronized retail platforms in C# and .NET to
+                  AI-integrated mobile apps and low-level assembly games.
                 </p>
                 <p className="text-lg text-slate-600 dark:text-slate-300 mb-6">
-                  I enjoy working on both frontend and backend development, with a particular focus on
-                  development using modern frameworks and technologies. I'm always eager to learn new technologies and
-                  take on challenging projects.
+                  My work spans full-stack desktop, web, and mobile development, with a growing focus on AI-integrated
+                  applications — agentic pipelines, LLM-powered features, and real-time cloud sync. I'm always eager
+                  to take on challenging projects and ship things that actually work under pressure, as shown by a
+                  regional shortlist finish at the AI Seekho 2026 Google Antigravity National Hackathon.
                 </p>
                 <div className="flex space-x-4">
                   <Button variant="outline" size="sm" asChild>
@@ -160,7 +157,7 @@ export default function Portfolio() {
                       <Code className="w-8 h-8 text-blue-600" />
                       <div>
                         <h3 className="font-semibold">Problem Solver</h3>
-                        <p className="text-sm text-slate-600">Love tackling complex coding challenges</p>
+                        <p className="text-sm text-slate-600 dark:text-slate-400">Love tackling complex coding challenges</p>
                       </div>
                     </div>
                   </CardContent>
@@ -170,8 +167,8 @@ export default function Portfolio() {
                     <div className="flex items-center space-x-3">
                       <Smartphone className="w-8 h-8 text-green-600" />
                       <div>
-                        <h3 className="font-semibold">Mobile First</h3>
-                        <p className="text-sm text-slate-600">Focused on mobile app development</p>
+                        <h3 className="font-semibold">Mobile &amp; AI</h3>
+                        <p className="text-sm text-slate-600 dark:text-slate-400">Gemini-powered Android &amp; React Native apps</p>
                       </div>
                     </div>
                   </CardContent>
@@ -182,7 +179,7 @@ export default function Portfolio() {
                       <Globe className="w-8 h-8 text-purple-600" />
                       <div>
                         <h3 className="font-semibold">Full Stack</h3>
-                        <p className="text-sm text-slate-600">End-to-end application development</p>
+                        <p className="text-sm text-slate-600 dark:text-slate-400">Desktop, web, and cloud-synced systems</p>
                       </div>
                     </div>
                   </CardContent>
@@ -197,24 +194,28 @@ export default function Portfolio() {
       <section id="skills" className="py-16 px-4 bg-slate-50 dark:bg-slate-800">
         <div className="container mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12 text-slate-800 dark:text-slate-100">
-            Skills & Technologies
+            Skills &amp; Technologies
           </h2>
-          <div className="max-w-4xl mx-auto">
-            <div className="grid md:grid-cols-3 gap-8">
+          <div className="max-w-5xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-8">
               <Card>
                 <CardHeader>
                   <CardTitle className="flex items-center">
-                    <Smartphone className="w-5 h-5 mr-2 text-blue-600" />
-                    Mobile Development
+                    <Code className="w-5 h-5 mr-2 text-blue-600" />
+                    Languages
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="flex flex-wrap gap-2">
-                    <Badge variant="secondary">React Native</Badge>
-                    <Badge variant="secondary">Flutter</Badge>
-                    <Badge variant="secondary">Swift</Badge>
+                    <Badge variant="secondary">C#</Badge>
+                    <Badge variant="secondary">Python</Badge>
+                    <Badge variant="secondary">Java</Badge>
+                    <Badge variant="secondary">C</Badge>
+                    <Badge variant="secondary">C++</Badge>
+                    <Badge variant="secondary">SQL</Badge>
                     <Badge variant="secondary">Kotlin</Badge>
-                    <Badge variant="secondary">Expo</Badge>
+                    <Badge variant="secondary">JavaScript (React)</Badge>
+                    <Badge variant="secondary">x86 Assembly</Badge>
                   </div>
                 </CardContent>
               </Card>
@@ -223,17 +224,17 @@ export default function Portfolio() {
                 <CardHeader>
                   <CardTitle className="flex items-center">
                     <Globe className="w-5 h-5 mr-2 text-green-600" />
-                    Web Development
+                    Frameworks
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="flex flex-wrap gap-2">
-                    <Badge variant="secondary">React</Badge>
-                    <Badge variant="secondary">Next.js</Badge>
-                    <Badge variant="secondary">TypeScript</Badge>
-                    <Badge variant="secondary">JavaScript</Badge>
-                    <Badge variant="secondary">HTML/CSS</Badge>
-                    <Badge variant="secondary">Tailwind CSS</Badge>
+                    <Badge variant="secondary">.NET / WinUI 3</Badge>
+                    <Badge variant="secondary">React JS</Badge>
+                    <Badge variant="secondary">SFML</Badge>
+                    <Badge variant="secondary">Android SDK</Badge>
+                    <Badge variant="secondary">React Native</Badge>
+                    <Badge variant="secondary">Google Genkit</Badge>
                   </div>
                 </CardContent>
               </Card>
@@ -242,17 +243,36 @@ export default function Portfolio() {
                 <CardHeader>
                   <CardTitle className="flex items-center">
                     <Database className="w-5 h-5 mr-2 text-purple-600" />
-                    Backend & Tools
+                    Databases
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="flex flex-wrap gap-2">
-                    <Badge variant="secondary">Node.js</Badge>
-                    <Badge variant="secondary">Python</Badge>
-                    <Badge variant="secondary">Firebase</Badge>
-                    <Badge variant="secondary">MongoDB</Badge>
-                    <Badge variant="secondary">Git</Badge>
+                    <Badge variant="secondary">PostgreSQL (Supabase)</Badge>
+                    <Badge variant="secondary">SQL Server (SSMS)</Badge>
+                    <Badge variant="secondary">Firebase Firestore</Badge>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardHeader>
+                  <CardTitle className="flex items-center">
+                    <Smartphone className="w-5 h-5 mr-2 text-orange-600" />
+                    Tools &amp; Concepts
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex flex-wrap gap-2">
+                    <Badge variant="secondary">Visual Studio</Badge>
+                    <Badge variant="secondary">VS Code</Badge>
+                    <Badge variant="secondary">Android Studio</Badge>
+                    <Badge variant="secondary">Git &amp; GitHub</Badge>
+                    <Badge variant="secondary">Google Colab</Badge>
+                    <Badge variant="secondary">SHA-256 Auth</Badge>
                     <Badge variant="secondary">REST APIs</Badge>
+                    <Badge variant="secondary">Real-Time Cloud Sync</Badge>
+                    <Badge variant="secondary">Agentic Pipelines</Badge>
                   </div>
                 </CardContent>
               </Card>
@@ -267,29 +287,154 @@ export default function Portfolio() {
           <h2 className="text-3xl font-bold text-center mb-12 text-slate-800 dark:text-slate-100">Featured Projects</h2>
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+              {/* ShopMate */}
+              <Card className="hover:shadow-lg transition-shadow">
+                <CardHeader className="flex flex-col">
+                  <div className="rounded-lg mb-4 w-full h-52 bg-gradient-to-br from-cyan-500 to-blue-700 flex items-center justify-center">
+                    <ShoppingCart className="w-16 h-16 text-white" />
+                  </div>
+                  <CardTitle>ShopMate</CardTitle>
+                  <CardDescription>
+                    Dual-role POS &amp; inventory management desktop app with SHA-256 auth, role-based access, and
+                    Supabase real-time cloud sync across 6 business modules.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    <Badge variant="outline">C#</Badge>
+                    <Badge variant="outline">WinUI 3</Badge>
+                    <Badge variant="outline">.NET</Badge>
+                    <Badge variant="outline">Supabase PostgreSQL</Badge>
+                  </div>
+                  <div className="flex space-x-2">
+                    <Button size="sm" variant="outline" asChild>
+                      <a href="https://github.com/ChishtiShaheer" target="_blank" rel="noopener noreferrer">
+                        <Github className="w-4 h-4 mr-1" />
+                        Git
+                      </a>
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Treadify */}
+              <Card className="hover:shadow-lg transition-shadow">
+                <CardHeader className="flex flex-col">
+                  <div className="rounded-lg mb-4 w-full h-52 bg-gradient-to-br from-emerald-500 to-teal-700 flex items-center justify-center">
+                    <LayoutDashboard className="w-16 h-16 text-white" />
+                  </div>
+                  <CardTitle>Treadify</CardTitle>
+                  <CardDescription>
+                    GitHub-integrated project management ecosystem for Product, Leadership, and Development teams,
+                    with automated sprint reporting and hierarchical goal mapping.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    <Badge variant="outline">React JS</Badge>
+                    <Badge variant="outline">GitHub API</Badge>
+                  </div>
+                  <div className="flex space-x-2">
+                    <Button size="sm" variant="outline" asChild>
+                      <a href="https://github.com/ChishtiShaheer?tab=repositories" target="_blank" rel="noopener noreferrer">
+                        <Github className="w-4 h-4 mr-1" />
+                        Git
+                      </a>
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* NutriVisionary */}
+              <Card className="hover:shadow-lg transition-shadow">
+                <CardHeader className="flex flex-col">
+                  <div className="rounded-lg mb-4 w-full h-52 bg-gradient-to-br from-lime-500 to-green-700 flex items-center justify-center">
+                    <Salad className="w-16 h-16 text-white" />
+                  </div>
+                  <CardTitle>NutriVisionary</CardTitle>
+                  <CardDescription>
+                    AI fitness &amp; nutrition Android app with a Gemini-powered chatbot for conversational macro
+                    tracking and a CameraX-based food recognition pipeline for calorie estimation.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    <Badge variant="outline">Java</Badge>
+                    <Badge variant="outline">Firebase</Badge>
+                    <Badge variant="outline">CameraX</Badge>
+                    <Badge variant="outline">Gemini API</Badge>
+                    <Badge variant="outline">In Development</Badge>
+                  </div>
+                  <div className="flex space-x-2">
+                    <Button size="sm" variant="outline" asChild>
+                      <a href="https://github.com/ChishtiShaheer?tab=repositories" target="_blank" rel="noopener noreferrer">
+                        <Github className="w-4 h-4 mr-1" />
+                        Git
+                      </a>
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* CognitiveKinetic (Relay) */}
+              <Card className="hover:shadow-lg transition-shadow">
+                <CardHeader className="flex flex-col">
+                  <div className="rounded-lg mb-4 w-full h-52 bg-gradient-to-br from-fuchsia-500 to-purple-700 flex items-center justify-center">
+                    <Radar className="w-16 h-16 text-white" />
+                  </div>
+                  <CardTitle>CognitiveKinetic (Relay)</CardTitle>
+                  <CardDescription>
+                    Full-stack agentic operational intelligence platform: a 5-stage async AI pipeline converts
+                    unstructured news into quantitative risk signals, with a stateful action-simulation sandbox for
+                    before/after impact comparisons.
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    <Badge variant="outline">React Native</Badge>
+                    <Badge variant="outline">Firebase</Badge>
+                    <Badge variant="outline">Node.js</Badge>
+                    <Badge variant="outline">TypeScript</Badge>
+                    <Badge variant="outline">Google Genkit</Badge>
+                    <Badge variant="outline">Gemini 2.5 Flash</Badge>
+                  </div>
+                  <div className="flex space-x-2">
+                    <Button size="sm" variant="outline" asChild>
+                      <a href="https://github.com/ChishtiShaheer?tab=repositories" target="_blank" rel="noopener noreferrer">
+                        <Github className="w-4 h-4 mr-1" />
+                        Git
+                      </a>
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+
+              {/* Chess */}
               <Card className="hover:shadow-lg transition-shadow">
                 <CardHeader className="flex flex-col">
                   <Image
                     src="/chessimg.jpg"
-                    alt="CHESS"
+                    alt="2D Chess Game"
                     width={400}
                     height={200}
                     className="rounded-lg mb-4 w-full h-52 object-cover"
                   />
-                  <CardTitle>CHESS</CardTitle>
+                  <CardTitle>2D Chess Game</CardTitle>
                   <CardDescription>
-                    A 2D chess game built with basic OOP and SFML.
+                    Complete chess engine with full rule validation (en passant, castling, promotion) and recursive
+                    check/checkmate detection — 100% FIDE compliant, no external libraries.
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="flex flex-wrap gap-2 mb-4">
+                    <Badge variant="outline">C++</Badge>
                     <Badge variant="outline">SFML</Badge>
                     <Badge variant="outline">OOP</Badge>
-                    <Badge variant="outline">DATA STRUCTURES</Badge>
                   </div>
                   <div className="flex space-x-2">
                     <Button size="sm" variant="outline" asChild>
-                      <a href="https://github.com/ChishtiShaheer" target="_blank" rel="noopener noreferrer">
+                      <a href="https://github.com/ChishtiShaheer?tab=repositories" target="_blank" rel="noopener noreferrer">
                         <Github className="w-4 h-4 mr-1" />
                         Git
                       </a>
@@ -298,59 +443,30 @@ export default function Portfolio() {
                 </CardContent>
               </Card>
 
-              <Card className="hover:shadow-lg transition-shadow">
-                <CardHeader className="flex flex-col">
-                  <Image
-                    src="/ccimg.jpg"
-                    alt="CANDY CRUSH"
-                    width={400}
-                    height={200}
-                    className="rounded-lg mb-4 w-full h-52 object-cover"
-                  />
-                  <CardTitle>CANDY CRUSH</CardTitle>
-                  <CardDescription>
-                    A 2D candy crush game built with basic OOP and SFML.
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    <Badge variant="outline">OOP</Badge>
-                    <Badge variant="outline">SFML</Badge>
-                    <Badge variant="outline">DATA STRUCTURES</Badge>
-                  </div>
-                  <div className="flex space-x-2">
-                    <Button size="sm" variant="outline" asChild>
-                      <a href="https://github.com/ChishtiShaheer" target="_blank" rel="noopener noreferrer">
-                        <Github className="w-4 h-4 mr-1" />
-                        Git
-                      </a>
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-
+              {/* Maze Runner */}
               <Card className="hover:shadow-lg transition-shadow">
                 <CardHeader className="flex flex-col">
                   <Image
                     src="/mazerunnerimg.jpg"
-                    alt="MAZE RUNNER"
+                    alt="2D Maze Game"
                     width={400}
                     height={200}
                     className="rounded-lg mb-4 w-full h-52 object-cover"
                   />
-                  <CardTitle>MAZE RUNNER</CardTitle>
+                  <CardTitle>2D Maze Game (Pacman Style)</CardTitle>
                   <CardDescription>
-                    A 2D Game in Assembly Language where the player navigates through a maze.
+                    Fully playable maze game in x86 Assembly with hardware-level keyboard interrupt handling (INT 9h),
+                    optimized screen buffer manipulation, and pixel-precise collision detection in 16-bit real-mode.
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
                   <div className="flex flex-wrap gap-2 mb-4">
-                    <Badge variant="outline">ASSEMBLY</Badge>
-                    <Badge variant="outline">IAPX 8088</Badge>
+                    <Badge variant="outline">x86 Assembly</Badge>
+                    <Badge variant="outline">Intel iAPX 8088</Badge>
                   </div>
                   <div className="flex space-x-2">
                     <Button size="sm" variant="outline" asChild>
-                      <a href="https://github.com/ChishtiShaheer" target="_blank" rel="noopener noreferrer">
+                      <a href="https://github.com/ChishtiShaheer?tab=repositories" target="_blank" rel="noopener noreferrer">
                         <Github className="w-4 h-4 mr-1" />
                         Git
                       </a>
@@ -358,27 +474,63 @@ export default function Portfolio() {
                   </div>
                 </CardContent>
               </Card>
+
             </div>
           </div>
         </div>
       </section>
 
+      {/* Achievements & Certifications Section */}
+      <section id="achievements" className="py-16 px-4 bg-slate-50 dark:bg-slate-800">
+        <div className="container mx-auto">
+          <h2 className="text-3xl font-bold text-center mb-12 text-slate-800 dark:text-slate-100">
+            Achievements &amp; Certifications
+          </h2>
+          <div className="max-w-4xl mx-auto">
+            <Card>
+              <CardHeader>
+                <div className="flex items-start gap-4">
+                  <div className="rounded-full bg-amber-100 dark:bg-amber-900/40 p-3">
+                    <Award className="w-6 h-6 text-amber-600 dark:text-amber-400" />
+                  </div>
+                  <div>
+                    <CardTitle className="text-xl">
+                      Regional Shortlist — AI Seekho 2026 Google Antigravity National Hackathon
+                    </CardTitle>
+                    <CardDescription className="mt-1">
+                      Issued by Google for Developers, Tech Nation Pakistan, Telenor &amp; Innovista | AI Seekho #VibeKaregaPakistan · 2026
+                    </CardDescription>
+                  </div>
+                </div>
+              </CardHeader>
+              <CardContent>
+                <p className="text-slate-600 dark:text-slate-300">
+                  Secured 10th place on the Regional Shortlist out of hundreds of competitive teams across the
+                  region, recognized for outstanding technical execution, AI ingenuity, and the ability to build
+                  rapidly under pressure.
+                </p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
       {/* Education Section */}
-      <section id="education" className="py-16 px-4 bg-slate-50 dark:bg-slate-800">
+      <section id="education" className="py-16 px-4 bg-white dark:bg-slate-900">
         <div className="container mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12 text-slate-800 dark:text-slate-100">Education</h2>
           <div className="max-w-4xl mx-auto">
             <Card>
               <CardHeader>
-                <CardTitle className="text-xl">Bachelor of Science in Computer Science</CardTitle>
-                <CardDescription className="text-lg">Currently Junior Year</CardDescription>
+                <CardTitle className="text-xl">Bachelor of Science in Computer Science (BSCS)</CardTitle>
+                <CardDescription className="text-lg">FAST NUCES, Lahore, Pakistan · 2023 – Present</CardDescription>
               </CardHeader>
               <CardContent>
                 <div className="space-y-4">
                   <div>
                     <h4 className="font-semibold text-slate-400">Relevant Coursework:</h4>
                     <div className="flex flex-wrap gap-2 mt-2">
-                      <Badge variant="outline">Data Structures & Algorithms</Badge>
+                      <Badge variant="outline">Data Structures &amp; Algorithms</Badge>
                       <Badge variant="outline">Object-Oriented Programming</Badge>
                       <Badge variant="outline">Database Systems</Badge>
                       <Badge variant="outline">Software Engineering</Badge>
@@ -388,11 +540,12 @@ export default function Portfolio() {
                     </div>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-slate-400">Academic & Extracurricular Achievements:</h4>
-                    <ul className="list-disc list-inside mt-2 text-slate-600">
+                    <h4 className="font-semibold text-slate-400">Academic &amp; Extracurricular Achievements:</h4>
+                    <ul className="list-disc list-inside mt-2 text-slate-600 dark:text-slate-300">
+                      <li>Regional Shortlist, AI Seekho 2026 Google Antigravity National Hackathon</li>
                       <li>Programming competition participant</li>
                       <li>SOFTEC Member</li>
-                      <li>FAST sports society member</li>
+                      <li>FAST Sports Society member</li>
                     </ul>
                   </div>
                 </div>
@@ -403,7 +556,7 @@ export default function Portfolio() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-16 px-4 bg-white dark:bg-slate-900">
+      <section id="contact" className="py-16 px-4 bg-slate-50 dark:bg-slate-800">
         <div className="container mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12 text-slate-800 dark:text-slate-100">Get In Touch</h2>
           <div className="max-w-4xl mx-auto">
@@ -413,12 +566,12 @@ export default function Portfolio() {
                 discuss projects, internships, or just chat about technology!
               </p>
             </div>
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-4 gap-6">
               <Card className="text-center hover:shadow-lg transition-shadow">
                 <CardContent className="p-6">
                   <Mail className="w-8 h-8 mx-auto mb-4 text-blue-600" />
                   <h3 className="font-semibold mb-2">Email</h3>
-                  <p className="text-slate-600">shaheerchishti21@gmail.com</p>
+                  <p className="text-slate-600 dark:text-slate-400 text-sm break-all">shaheerchishti21@gmail.com</p>
                   <Button className="mt-4" size="sm" variant="outline" asChild>
                     <a href="mailto:shaheerchishti21@gmail.com">Send Email</a>
                   </Button>
@@ -427,9 +580,20 @@ export default function Portfolio() {
 
               <Card className="text-center hover:shadow-lg transition-shadow">
                 <CardContent className="p-6">
+                  <Phone className="w-8 h-8 mx-auto mb-4 text-blue-600" />
+                  <h3 className="font-semibold mb-2">Phone</h3>
+                  <p className="text-slate-600 dark:text-slate-400 text-sm">+92 326 9350061</p>
+                  <Button className="mt-4" size="sm" variant="outline" asChild>
+                    <a href="tel:+923269350061">Call</a>
+                  </Button>
+                </CardContent>
+              </Card>
+
+              <Card className="text-center hover:shadow-lg transition-shadow">
+                <CardContent className="p-6">
                   <Linkedin className="w-8 h-8 mx-auto mb-4 text-blue-600" />
                   <h3 className="font-semibold mb-2">LinkedIn</h3>
-                  <p className="text-slate-600">Connect with me</p>
+                  <p className="text-slate-600 dark:text-slate-400 text-sm">Connect with me</p>
                   <Button className="mt-4" size="sm" variant="outline" asChild>
                     <a href="https://www.linkedin.com/in/shaheer-chishti/" target="_blank" rel="noopener noreferrer">
                       View Profile
@@ -442,7 +606,7 @@ export default function Portfolio() {
                 <CardContent className="p-6">
                   <Github className="w-8 h-8 mx-auto mb-4 text-blue-600" />
                   <h3 className="font-semibold mb-2">GitHub</h3>
-                  <p className="text-slate-600">Check out my code</p>
+                  <p className="text-slate-600 dark:text-slate-400 text-sm">Check out my code</p>
                   <Button className="mt-4" size="sm" variant="outline" asChild>
                     <a href="https://github.com/ChishtiShaheer" target="_blank" rel="noopener noreferrer">
                       View Projects
