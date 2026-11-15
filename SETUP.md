@@ -1,3 +1,8 @@
+# Portfolio Project – Setup & Requirements
+
+> This file was previously `requirements.txt`. It was renamed because Netlify treats a `requirements.txt` as a Python dependency file and runs `pip install` on it, which broke deploys.
+
+```text
 # ==============================================================================
 # Portfolio Project - Requirements & Quick Start Guide
 # ==============================================================================
@@ -107,3 +112,4 @@ zod==3.25.64
 postcss==8.5.5
 tailwindcss==3.4.17
 typescript==5.8.3
+```
