@@ -15,6 +15,7 @@ li+li{margin-top:.6em}
 .name{font-weight:700;font-size:1.25rem;line-height:1.2}
 .where{color:var(--soft);font-size:.95rem}
 .open{display:flex;align-items:center;gap:8px;font-size:.92rem}
+.avail{color:var(--soft);font-size:.9rem;margin-top:-20px}
 .open::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--ok)}
 .rail ul{list-style:none;padding:0;display:grid;gap:8px}
 .rail li+li{margin-top:0}
@@ -31,21 +32,17 @@ li+li{margin-top:.6em}
 .chart{background:var(--panel);border:1px solid var(--line);padding:14px 16px 10px}
 .chart-head{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;color:var(--soft)}
 .legend{display:flex;align-items:center;gap:8px}
-.k{display:inline-block;width:18px;height:3px}
-.k.train{background:var(--ink)}
-.k.val{background:var(--loss);margin-left:8px}
 .chart svg{display:block;width:100%;height:auto;margin:8px 0 2px}
 .chart figcaption{color:var(--soft);font-size:.75rem}
-.grid{stroke:var(--line);stroke-width:1}
 .tick{font-family:var(--font-mono),monospace;font-size:11px;fill:var(--soft)}
-.curve{fill:none;stroke-width:2.5;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;animation:draw 2.4s cubic-bezier(.3,.1,.2,1) .5s forwards}
-.curve.train{stroke:var(--ink)}
-.curve.val{stroke:var(--loss)}
-@keyframes draw{to{stroke-dashoffset:0}}
-.champ{opacity:0;animation:pop .4s ease 2.9s forwards}
-.champ circle{fill:var(--ok);stroke:var(--paper);stroke-width:2}
-.champ text{font-family:var(--font-mono),monospace;font-size:11px;fill:var(--ok);font-weight:500}
-@keyframes pop{to{opacity:1}}
+.sw{display:inline-block;width:14px;height:10px;border-radius:2px;margin:0 2px}
+.l0{fill:rgba(20,32,43,.08);background:rgba(20,32,43,.08)}
+.l1{fill:#A9C7B9;background:#A9C7B9}
+.l2{fill:#6FA48D;background:#6FA48D}
+.l3{fill:#3D8068;background:#3D8068}
+.l4{fill:#236653;background:#236653}
+.cell.in{transform-box:fill-box;transform-origin:center;animation:cellin .4s ease both;animation-delay:calc(var(--c)*50ms + .3s)}
+@keyframes cellin{from{opacity:0;transform:scale(.3)}to{opacity:1;transform:none}}
 
 .sec{padding-top:80px}
 .sec h2{font-size:1.6rem;letter-spacing:-.02em;line-height:1.2;margin-bottom:24px;padding-top:16px;border-top:2px solid var(--ink)}
@@ -95,6 +92,4 @@ li+li{margin-top:.6em}
 }
 @media (prefers-reduced-motion:reduce){
   *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
-  .curve{stroke-dashoffset:0}
-  .champ{opacity:1}
 }

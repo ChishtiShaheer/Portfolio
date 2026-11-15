@@ -1,4 +1,4 @@
-import LossCurve from "../components/LossCurve";
+import ActivityGraph from "../components/ActivityGraph";
 import Pipeline from "../components/Pipeline";
 import Runs from "../components/Runs";
 import { links, log, toolbox } from "../lib/content";
@@ -11,7 +11,8 @@ export default function Page() {
           <p className="name">Shaheer Chishti</p>
           <p className="where">BSCS, FAST NUCES Lahore</p>
         </div>
-        <p className="open">Open to internships</p>
+        <p className="open">Open to work</p>
+        <p className="avail">Internships, and remote part-time or full-time roles.</p>
         <nav aria-label="Sections">
           <ul>
             <li><a href="#projects">Projects</a></li>
@@ -32,7 +33,7 @@ export default function Page() {
             experiments you can still compare a month later, and containers that behave the same on
             someone else's machine.
           </p>
-          <LossCurve />
+          <ActivityGraph />
         </header>
 
         <section className="sec" id="projects">
@@ -56,7 +57,7 @@ export default function Page() {
             <p>
               In summer 2026 I worked at NitNode in Lahore as an Associate AI Engineer. For my final
               year project I'm building PromptGuard, a gateway that controls how a company's people
-              use LLMs. I'm looking for an internship where ML meets infrastructure.
+              use LLMs. I'm open to internships and to remote part-time or full-time work, anywhere ML meets infrastructure.
             </p>
           </div>
         </section>
@@ -90,7 +91,7 @@ export default function Page() {
 
         <section className="sec" id="contact">
           <h2>Contact</h2>
-          <p className="prose">The quickest way to reach me is email.</p>
+          <p className="prose">Open to internships and remote part-time or full-time roles. Email is the quickest way to reach me.</p>
           <p className="contact">
             <a href={links.email}>shaheerchishti21@gmail.com</a>
             <a href={links.github} target="_blank" rel="noreferrer">GitHub</a>
