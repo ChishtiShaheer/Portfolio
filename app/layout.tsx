@@ -1,25 +1,20 @@
-import type React from "react"
-import type { Metadata } from "next"
-import { Inter } from "next/font/google"
-import "./globals.css"
-import ThemeProviderWrapper from "@/components/ThemeProviderWrapper"
+import type { Metadata } from "next";
+import { Bricolage_Grotesque, IBM_Plex_Mono } from "next/font/google";
+import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] })
+const display = Bricolage_Grotesque({ subsets: ["latin"], variable: "--font-display" });
+const mono = IBM_Plex_Mono({ subsets: ["latin"], weight: ["400", "500"], variable: "--font-mono" });
 
 export const metadata: Metadata = {
-  title: "Shaheer Chishti - Portfolio",
-  description: "Computer Science Sophomore & App Developer Portfolio",
-  generator: "v0.dev",
-}
+  title: "Shaheer Chishti | ML and DevOps",
+  description:
+    "Final-year CS student at FAST Lahore building MLOps pipelines: versioned data, tracked experiments, containers and CI.",
+};
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" suppressHydrationWarning>
-      <body className={inter.className}>
-        <ThemeProviderWrapper>
-          {children}
-        </ThemeProviderWrapper>
-      </body>
+    <html lang="en" className={`${display.variable} ${mono.variable}`}>
+      <body>{children}</body>
     </html>
-  )
+  );
 }
